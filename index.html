@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SlitchGhop | Underground Market</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="text-gray-100 relative">
+    <div class="cyber-grid"></div>
+    <div id="particles"></div>
+
+    <div
+      class="fixed top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-cyan-500/30 pointer-events-none"
+    ></div>
+    <div
+      class="fixed top-0 right-0 w-32 h-32 border-r-2 border-t-2 border-purple-500/30 pointer-events-none"
+    ></div>
+    <div
+      class="fixed bottom-0 left-0 w-32 h-32 border-l-2 border-b-2 border-purple-500/30 pointer-events-none"
+    ></div>
+    <div
+      class="fixed bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-cyan-500/30 pointer-events-none"
+    ></div>
+
+    <div class="relative z-10 min-h-screen p-4 md:p-8">
+      <header class="max-w-6xl mx-auto mb-8">
+        <div
+          class="glass-card rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 scanlines relative overflow-hidden"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-2xl font-bold font-cyber float-anim"
+            >
+              SG
+            </div>
+            <div>
+              <h1
+                class="text-2xl md:text-3xl font-cyber font-bold tracking-wider glitch-hover"
+              >
+                <span class="text-cyan-400">SLITCH</span
+                ><span class="text-purple-400">GHOP</span>
+              </h1>
+              <p class="text-gray-400 text-sm tracking-widest">
+                UNDERGROUND MARKET v2.4.7
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="glass-card rounded-xl p-4 neon-border relative pulse-ring text-cyan-400"
+          >
+            <div class="text-xs text-gray-400 uppercase tracking-widest mb-1">
+              Available Balance
+            </div>
+            <div class="flex items-baseline gap-2">
+              <span
+                id="balance"
+                class="text-3xl font-cyber font-bold shimmer-text"
+                >300</span
+              >
+              <span class="text-lg text-purple-400 font-semibold">PHP</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-1 space-y-6">
+          <div class="glass-card rounded-2xl p-6 item-card">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-lg bg-gradient-to-br from-red-500/20 to-orange-500/20 flex items-center justify-center border border-red-500/30"
+              >
+                <svg
+                  class="w-5 h-5 text-red-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-cyber font-bold text-lg text-red-400">
+                  WITHDRAW
+                </h3>
+                <p class="text-xs text-gray-500">Extract your credits</p>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <input
+                type="number"
+                id="withdrawAmount"
+                placeholder="Enter amount..."
+                class="input-cyber w-full px-4 py-3 rounded-lg text-white font-medium"
+              />
+              <button
+                id="withdrawBtn"
+                class="btn-cyber btn-danger w-full py-3 rounded-lg font-cyber font-bold tracking-wider"
+              >
+                WITHDRAW
+              </button>
+            </div>
+            <p class="text-xs text-gray-500 mt-3 italic">
+              * Deposits are disabled for security
+            </p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6">
+            <h3
+              class="font-cyber font-bold text-lg text-cyan-400 mb-4 flex items-center gap-2"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                />
+              </svg>
+              ACTIVITY LOG
+            </h3>
+            <div
+              id="transactionLog"
+              class="space-y-2 max-h-48 overflow-y-auto text-sm"
+            >
+              <div class="text-gray-500 italic text-center py-4">
+                No transactions yet...
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2">
+          <div class="glass-card rounded-2xl p-6">
+            <div class="flex items-center justify-between mb-6">
+              <h2
+                class="font-cyber font-bold text-xl text-cyan-400 flex items-center gap-2"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                  />
+                </svg>
+                BLACK MARKET
+              </h2>
+              <div class="text-xs text-gray-500 font-mono">SESSION: #4827</div>
+            </div>
+
+            <div
+              id="shopItems"
+              class="grid grid-cols-1 md:grid-cols-2 gap-4"
+            ></div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 mt-6">
+            <h3
+              class="font-cyber font-bold text-lg text-cyan-400 mb-4 flex items-center gap-2"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                />
+              </svg>
+              YOUR INVENTORY
+            </h3>
+            <div id="inventory" class="flex flex-wrap gap-3">
+              <div class="text-gray-500 italic">Empty...</div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div id="toastContainer" class="fixed top-4 right-4 z-50 space-y-2"></div>
+
+    <div
+      id="flagModal"
+      class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 modal-hidden items-center justify-center"
+    >
+      <div
+        class="glass-card rounded-2xl p-8 max-w-md mx-4 text-center neon-border border-yellow-500/50"
+      >
+        <div class="text-6xl mb-4">🏆</div>
+        <h2 class="font-cyber text-2xl text-yellow-400 mb-4 neon-text">
+          FLAG CAPTURED!
+        </h2>
+        <div
+          id="flagDisplay"
+          class="bg-black/50 rounded-lg p-4 font-mono text-green-400 break-all mb-4"
+        ></div>
+        <button
+          id="closeModalBtn"
+          class="btn-cyber px-6 py-2 rounded-lg font-bold"
+        >
+          CLOSE
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="decryptorModal"
+      class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 modal-hidden items-center justify-center"
+    >
+      <div
+        class="glass-card rounded-2xl p-8 max-w-md mx-4 text-center neon-border border-pink-500/50"
+      >
+        <div class="text-6xl mb-4">🔐</div>
+        <h2 class="font-cyber text-2xl text-pink-400 mb-4 neon-text">
+          DECRYPTOR KEY
+        </h2>
+        <div
+          id="decryptorDisplay"
+          class="bg-black/50 rounded-lg p-4 mb-4 text-left"
+        ></div>
+        <button
+          id="closeDecryptorBtn"
+          class="btn-cyber px-6 py-2 rounded-lg font-bold"
+        >
+          CLOSE
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
