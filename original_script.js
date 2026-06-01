@@ -192,7 +192,7 @@ class SlitchGhopStore {
             <p class="text-gray-400 text-sm mb-2">Cipher Type:</p>
             <p class="font-mono text-cyan-400 text-lg mb-4">Vigenère</p>
             <p class="text-gray-400 text-sm mb-2">Decryption Key:</p>
-            <p class="font-mono text-green-400 text-lg">McgIsHere</p>
+            <p class="font-mono text-green-400 text-lg">McgWasHere</p>
         `;
         modal.classList.remove('modal-hidden');
         modal.classList.add('modal-visible');
