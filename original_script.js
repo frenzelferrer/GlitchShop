@@ -2,7 +2,7 @@ class SlitchGhopStore {
     constructor() {
         this.balance = 300;
         this.inventory = [];
-        this.flag = "YEM{Idd4c$_W1pf3t_Aa3j_1uTl7}";
+        this.flag = "YEM{Wlo4f$_J1cx3d_Wy3n_1nHb7}";
         this.shopItems = {
             flag: { name: 'CAPTURE FLAG', emoji: '🚩', price: 676767, desc: 'The ultimate prize. Prove your worth.', rarity: 'LEGENDARY', color: 'yellow' },
             banana: { name: 'GOLDEN BANANA', emoji: '🍌', price: 50, desc: 'A perfectly ripe banana. Potassium included.', rarity: 'COMMON', color: 'yellow' },
