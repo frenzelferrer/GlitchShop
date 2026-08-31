@@ -2,7 +2,7 @@ class SlitchGhopStore {
     constructor() {
         this.balance = 300;
         this.inventory = [];
-        this.flag = "YEM{Wlo4f$_J1cx3d_Wy3n_1nHb7}";
+        this.flag = "YQEW{Wlo4f$_J1cx3d_Cu3p_1jPm7}";
         this.shopItems = {
             flag: { name: 'CAPTURE FLAG', emoji: '🚩', price: 676767, desc: 'The ultimate prize. Prove your worth.', rarity: 'LEGENDARY', color: 'yellow' },
             banana: { name: 'GOLDEN BANANA', emoji: '🍌', price: 50, desc: 'A perfectly ripe banana. Potassium included.', rarity: 'COMMON', color: 'yellow' },
@@ -192,7 +192,7 @@ class SlitchGhopStore {
             <p class="text-gray-400 text-sm mb-2">Cipher Type:</p>
             <p class="font-mono text-cyan-400 text-lg mb-4">Vigenère</p>
             <p class="text-gray-400 text-sm mb-2">Decryption Key:</p>
-            <p class="font-mono text-green-400 text-lg">McgWasHere</p>
+            <p class="font-mono text-green-400 text-lg">MicyWasHere</p>
         `;
         modal.classList.remove('modal-hidden');
         modal.classList.add('modal-visible');
